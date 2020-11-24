@@ -34,3 +34,19 @@ done
 
 echo "Value Stored into Array"
 echo ${arithmeticArray[@]}
+
+
+for (( j=1; j<$len; j++ ))
+do
+		key=${arithmeticArray[$j]}
+                tmp=$(( $j-1 ))
+                while (( $tmp>=0 && ${arithmeticArray[tmp]}<$key ))
+                do
+                        arithmeticArray[$tmp+1]=${arithmeticArray[tmp]}
+                        hole=$(( $tmp-1 ))
+                done
+                arithmeticArray[$tmp+1]=$key
+done
+
+echo "Array After Descending Order"
+echo ${arithmeticArray[@]}
