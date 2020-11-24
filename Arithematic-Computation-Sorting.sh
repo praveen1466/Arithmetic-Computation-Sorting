@@ -8,3 +8,6 @@ read thirdNum
 
 op1=$(( $firstNum + ($secondNum*$thirdNum) ))
 echo "Value of op1 is: $op1"
+
+op2=$(( ($firstNum*$secondNum) + $thirdNum ))
+echo "Value of op2 is: $op2"
