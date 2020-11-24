@@ -7,6 +7,7 @@ read secondNum
 read thirdNum
 
 declare -A aithematicDictionary
+declare -a arithematicArray
 
 op1=$(( $firstNum + ($secondNum*$thirdNum) ))
 echo "Value of op1 is: $op1"
@@ -24,5 +25,12 @@ op4=$(( ($firstNum%$secondNum) + $thirdNum ))
 echo "Value of op4 is: $op4"
 aithematicDictionary[3]=$op4
 
-echo "Dictionary Values: "
-echo ${aithematicDictionary[@]}
+
+len=${#aaithematicDictionary[@]}
+for (( i=0; i<4; i++ ))
+do
+	arithematicArray[$i]=${aithematicDictionary[$i]}
+done
+
+echo "Value Stored into Array"
+echo ${arithmeticArray[@]}
